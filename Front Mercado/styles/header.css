@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+
+
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.promocao{
+    display: flex;
+    height: 35px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+
+}
+h3{
+    font-size: 11px;
+    color: #fff;
+}
+span{
+    color: rgb(173, 173, 173)
+}
+
+header{
+    display: flex;
+    height: 120px;
+}
+
+.menu{
+    border: 1px solid red;
+    width: 30%;
+    display: flex;
+    padding-left: 20px;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.logo{
+    border: 1px solid red;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons{
+    border: 1px solid red;
+    width: 30%;
+    display: flex;
+    justify-content: right;
+    padding-right: 20px;
+    align-items: center;
+    gap: 25px;
+}
+
+.info{
+    height: 50px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+i{
+    font-size: 40px;
+}
+
+h1{
+    font-size: 60px;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+#wallet{
+    color: #fff;
+    font-size: 20px;
+}
+
+#txt{
+    color: white;
+}
+
+ul{
+    list-style: none;
+    background-color: white;
+}
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 20px 25px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+ul li ul.dropdown li{
+    display: block;
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: black;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li a:hover {
+    background-color: red;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
