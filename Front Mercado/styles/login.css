@@ -1,0 +1,28 @@
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
+    height: 82vh;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    width: 60%;
+    align-items: center;
+    height: 400px;
+}
+
+#exampleInputEmail1, #exampleInputPassword1{
+    width: 100%;
+}
+
+.cadastro{
+    background-color: #f3f3f3;
+}

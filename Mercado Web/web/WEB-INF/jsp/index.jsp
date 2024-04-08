@@ -3,6 +3,7 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -12,12 +13,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-  <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="./header.css" />
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/header.css" />
 
   <script src="https://kit.fontawesome.com/0ba8cb147b.js" crossorigin="anonymous"></script>
 
-  <title>Login</title>
+  <title>Pagina Inicial</title>
 </head>
 
 <body>
@@ -33,8 +34,8 @@
     </div>
 
     <div class="search">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form  class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="O que você procura?" aria-label="Search">
         <button class="btn btn-outline-success" type="submit"><i id="search-icon"
             class="fa-solid fa-magnifying-glass"></i></button>
       </form>
@@ -46,7 +47,7 @@
           <i class="fa-solid fa-user"></i>
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Login</a></li>
+          <li><a class="dropdown-item" href="./pages/login.html">Login</a></li>
           <li><a class="dropdown-item" href="#">Cadastre-se</a></li>
           <li><a class="dropdown-item" href="#">Meus Pedidos</a></li>
         </ul>
