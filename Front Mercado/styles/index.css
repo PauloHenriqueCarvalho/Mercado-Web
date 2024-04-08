@@ -1,0 +1,14 @@
+s{
+    color: red;
+}
+.label-card{
+    color: green;
+}
+.label-card p{ 
+    color: black;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+}
