@@ -5,8 +5,9 @@
  */
 package model.dao;
 
-import com.mysql.jdbc.Connection;
+
 import conexao.Conexao;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ import java.sql.SQLException;
 public class ProdutoPedidoDAO {
     private void aaa() {
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             String query = "";

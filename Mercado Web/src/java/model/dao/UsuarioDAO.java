@@ -5,8 +5,9 @@
  */
 package model.dao;
 
-import com.mysql.jdbc.Connection;
+
 import conexao.Conexao;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,7 +42,7 @@ public class UsuarioDAO {
     public Boolean login(String email, String senha) {
         Boolean login = false;
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             String query = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
@@ -66,7 +67,7 @@ public class UsuarioDAO {
     public Usuario getUsuarioByEmail(String email) {
         Usuario u = new Usuario();
         try {
-            Connection conexao = Conexao.conectar();
+           java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
@@ -97,7 +98,7 @@ public class UsuarioDAO {
 
     public void create(Usuario u) {
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
 
             stmt = conexao.prepareStatement("INSERT INTO usuario (nome, email, senha, cpf, telefone) values (?, ?, ?, ?, ?)");
@@ -117,7 +118,7 @@ public class UsuarioDAO {
 
     public void update(Usuario u) {
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
 
             stmt = conexao.prepareStatement("UPDATE usuario SET nome = ?, email = ?, senha = ?, cpf = ?, telefone = ? WHERE idUsuario = ?");
@@ -139,7 +140,7 @@ public class UsuarioDAO {
 
     public void delete(Usuario u) {
         try {
-            Connection conexao = Conexao.conectar();
+           java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
 
             stmt = conexao.prepareStatement("UPDATE usuario SET nome = ?, email = ?, senha = ?, cpf = ?, telefone = ? WHERE idUsuario = ?");

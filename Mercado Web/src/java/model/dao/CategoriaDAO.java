@@ -5,8 +5,9 @@
  */
 package model.dao;
 
-import com.mysql.jdbc.Connection;
+
 import conexao.Conexao;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +24,7 @@ public class CategoriaDAO {
     private List<Categoria> listarTodos() {
         List<Categoria> categorias = new ArrayList();
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
@@ -51,7 +52,7 @@ public class CategoriaDAO {
     private Categoria readById(int id) {
         Categoria c = new Categoria();
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
@@ -78,7 +79,7 @@ public class CategoriaDAO {
     private Categoria readByNome(String nome) {
         Categoria c = new Categoria();
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
@@ -104,7 +105,7 @@ public class CategoriaDAO {
 
     private Categoria readByNome(Categoria c) {
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();;
             PreparedStatement stmt = null;
             ResultSet rs = null;
 

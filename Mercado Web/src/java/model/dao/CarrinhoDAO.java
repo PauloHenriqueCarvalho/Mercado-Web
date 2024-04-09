@@ -33,7 +33,7 @@ public class CarrinhoDAO {
         
         List<Produto> produtos = new ArrayList();
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             

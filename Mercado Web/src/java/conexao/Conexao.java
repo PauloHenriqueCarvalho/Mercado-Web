@@ -14,12 +14,17 @@ import java.sql.SQLException;
  * @author Senai
  */
 public class Conexao {
-    private static final String url = "jdbc:mysql://localhost:3306/banco";
-    private static final String usuario = "root";
-    private static final String senha = "";
+
+    private static Connection conn;
     
-    public static Connection conexao() throws SQLException {
-        return (Connection) DriverManager.getConnection(url, usuario, senha);
+    public static Connection getConn() {
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/banco-ds", "root", "");
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return conn;
     }
     
 }

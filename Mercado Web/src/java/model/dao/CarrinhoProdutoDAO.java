@@ -5,8 +5,9 @@
  */
 package model.dao;
 
-import com.mysql.jdbc.Connection;
+
 import conexao.Conexao;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -38,7 +39,7 @@ public class CarrinhoProdutoDAO {
         }*/
     private void adicionarProdutoAoCarrinho(Produto p, Carrinho c) {
         try {
-            Connection conexao = Conexao.conectar();
+           java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
 
             stmt = conexao.prepareStatement("INSERT INTO produto_pedido (carrinho, produto) VALUES (?, ?)");

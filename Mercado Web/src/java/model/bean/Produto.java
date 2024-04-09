@@ -5,6 +5,8 @@
  */
 package model.bean;
 
+import java.sql.Blob;
+
 /**
  *
  * @author Joao Guilherme
@@ -16,17 +18,19 @@ public class Produto {
     private Float valor;
     private Float desconto;
     private Float valorFinal;
+    private Blob imagem;
 
     public Produto() {
     }
 
-    public Produto(int idProduto, int categoria, String nome, Float valor, Float desconto, Float valorFinal) {
+    public Produto(int idProduto, int categoria, String nome, Float valor, Float desconto, Float valorFinal, Blob imagem) {
         this.idProduto = idProduto;
         this.categoria = categoria;
         this.nome = nome;
         this.valor = valor;
         this.desconto = desconto;
         this.valorFinal = valorFinal;
+        this.imagem = imagem;
     }
 
     public int getIdProduto() {
@@ -76,5 +80,15 @@ public class Produto {
     public void setValorFinal(Float valorFinal) {
         this.valorFinal = valorFinal;
     }
+
+    public Blob getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(Blob imagem) {
+        this.imagem = imagem;
+    }
+
+    
     
 }

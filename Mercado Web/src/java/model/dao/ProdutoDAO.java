@@ -5,8 +5,10 @@
  */
 package model.dao;
 
-import com.mysql.jdbc.Connection;
+
 import conexao.Conexao;
+import java.io.FileInputStream;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,7 +27,7 @@ public class ProdutoDAO {
         List<Produto> produtos = new ArrayList();
 
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             String query = "SELECT * FROM produto AS p INNER JOIN estoque AS e ON p.idProduto = e.produto WHERE e.quantidade > 0";
@@ -59,7 +61,7 @@ public class ProdutoDAO {
         List<Produto> produtos = new ArrayList();
 
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             String query = "SELECT * FROM produto";
@@ -92,7 +94,7 @@ public class ProdutoDAO {
     public List<Produto> listarPorCategoria(Categoria c) {
         List<Produto> produtos = new ArrayList();
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             String query = "SELECT * FROM produto AS p INNER JOIN categoria AS c ON p.categoria = c.idCategoria WHERE c.nome = ?";
@@ -124,7 +126,7 @@ public class ProdutoDAO {
     public List<Produto> listarPorPesquisa(String search) {
         List<Produto> produtos = new ArrayList();
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
@@ -158,7 +160,7 @@ public class ProdutoDAO {
     public Produto readById(int id) {
         Produto p = new Produto();
         try {
-            Connection conexao = Conexao.conectar();
+           java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
@@ -183,17 +185,18 @@ public class ProdutoDAO {
         return p;
     }
 
-    public void create(Produto p) {
+    public void create(Produto p, FileInputStream fis, int tamanho) {
         try {
-            Connection conexao = Conexao.conectar();
+           java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("INSERT INTO produto (nome, categoria, valor, desconto, valorFinal) VALUES (?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO produto (nome, categoria, valor, desconto, valorFinal, imagem) VALUES (?, ?, ?, ?, ?, ?)");
             stmt.setString(1, p.getNome());
             stmt.setInt(2, p.getCategoria());
             stmt.setFloat(3, p.getValor());
             stmt.setFloat(4, p.getDesconto());
             stmt.setFloat(5, p.getValorFinal());
+            stmt.setBlob(6, fis, tamanho);
 
             stmt.executeUpdate();
 
@@ -204,18 +207,20 @@ public class ProdutoDAO {
         }
     }
 
-    public void update(Produto p) {
+    public void update(Produto p, FileInputStream fis, int tamanho) {
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("UPDATE produto SET nome = ?, categoria = ?, valor = ?, desconto = ?, valorFinal = ? WHERE idProduto = ?");
+            stmt = conexao.prepareStatement("UPDATE produto SET nome = ?, categoria = ?, valor = ?, desconto = ?, valorFinal = ?, imagem = ? WHERE idProduto = ?");
             stmt.setString(1, p.getNome());
             stmt.setInt(2, p.getCategoria());
             stmt.setFloat(3, p.getValor());
             stmt.setFloat(4, p.getDesconto());
             stmt.setFloat(5, p.getValorFinal());
-            stmt.setInt(6, p.getIdProduto());
+            stmt.setBlob(6, fis, tamanho);
+            stmt.setInt(7, p.getIdProduto());
+            
 
             stmt.executeUpdate();
 
@@ -228,15 +233,10 @@ public class ProdutoDAO {
 
     public void delete(int id) {
         try {
-            Connection conexao = Conexao.conectar();
+           java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
 
             stmt = conexao.prepareStatement("DELETE FROM produto WHERE idProduto = ?");
-            stmt.setInt(1, id);
-
-            stmt.executeUpdate();
-
-            stmt = conexao.prepareStatement("DELETE FROM produto_imagem WHERE produto = ?");
             stmt.setInt(1, id);
 
             stmt.executeUpdate();

@@ -1,3 +1,13 @@
+<%-- 
+    Document   : cadastrar
+    Created on : 09/04/2024, 15:31:32
+    Author     : Senai
+--%>
+
+<%@page import="conexao.Conexao"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Connection"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,10 +17,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/login.css">
+    
+    <link href="index.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/header.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/login.css" rel="stylesheet" type="text/css"/>
 
     <script src="https://kit.fontawesome.com/0ba8cb147b.js" crossorigin="anonymous"></script>
 
@@ -18,6 +28,13 @@
 </head>
 
 <body>
+    
+    <% 
+        Connection con = Conexao.getConn();
+        System.out.println("con: " + con);
+    %>
+    
+    
     <div class="promocao">
         <h3>
             UTILIZE O CUPOM: <b>BEMVINDO10</b> E GANHE 10% NA SUA PRIMEIRA COMPRA
@@ -37,13 +54,14 @@
         <div class="icons">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
+                    aFirst slide
+                    ria-expanded="false">
                     <i class="fa-solid fa-user"></i>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="../index.html">Inicial</a></li>
+                    <li><a class="dropdown-item" href="index.jsp">Inicial</a></li>
 
-                    <li><a class="dropdown-item" href="./cadastrar.html">Cadastre-se</a></li>
+                    <li><a class="dropdown-item" href="./login.html">Login</a></li>
                     <li><a class="dropdown-item" href="#">Meus Pedidos</a></li>
                 </ul>
             </div>
@@ -52,15 +70,23 @@
             <i class="fa-solid fa-bag-shopping"></i>
         </div>
     </header>
-    <main>
-        <form class="form-container">
+    <main class="cadastro">
+        <form class="form-container" action="register" method="post">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email </label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
               <br>
               <label for="exampleInputPassword1" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <input type="password" name="senha" class="form-control" id="exampleInputPassword1">
+              <label for="exampleInputTel" class="form-label">Telefone </label>
+              <input type="tel"  name="tel" class="form-control" id="exampleInputEmail1" aria-describedby="telHelp">
+              <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+           
+              <label for="exampleInputName" class="form-label">Nome</label>
+              <input type="text"  name="name" class="form-control" id="exampleInputPassword1">
+            
+            
             </div>
 
             <div class="mb-3 form-check">

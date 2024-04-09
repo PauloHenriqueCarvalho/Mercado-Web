@@ -10,6 +10,7 @@ package model.bean;
  * @author Joao Guilherme
  */
 public class Usuario {
+    
     private int idUsuario;
     private String nome;
     private String email;

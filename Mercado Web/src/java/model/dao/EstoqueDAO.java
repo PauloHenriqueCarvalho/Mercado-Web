@@ -5,8 +5,9 @@
  */
 package model.dao;
 
-import com.mysql.jdbc.Connection;
+
 import conexao.Conexao;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,7 +42,7 @@ public class EstoqueDAO {
     public Estoque selecionarEstoquePorIdProduto(Produto p) {
         Estoque e = new Estoque();
         try {
-            Connection conexao = Conexao.conectar();
+           java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
@@ -70,7 +71,7 @@ public class EstoqueDAO {
     public List<Estoque> listarTodos() {
         List<Estoque> estoque = new ArrayList();
         try {
-            Connection conexao = Conexao.conectar();
+            java.sql.Connection conexao = Conexao.getConn();
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
