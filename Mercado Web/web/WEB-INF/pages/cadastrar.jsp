@@ -85,6 +85,9 @@
            
               <label for="exampleInputName" class="form-label">Nome</label>
               <input type="text"  name="name" class="form-control" id="exampleInputPassword1">
+              
+              <label for="exampleInputCPF" class="form-label">CPF</label>
+              <input type="text"  name="cpf" class="form-control" id="exampleInputPassword1">
             
             
             </div>
