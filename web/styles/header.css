@@ -4,8 +4,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 14/04/2024, 19:31:17
-    Author     : paulo
+    Created on : 09/04/2024, 15:37:06
+    Author     : Senai
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
@@ -54,14 +54,6 @@ header {
     align-items: center;
 
 }
-.carrinho{
-    width: 10%;
-    display: flex;
-    padding-left: 20px;
-    justify-content: center;
-    align-items: center;
-
-}
 
 .logo {
     /* border: 1px solid red;  */
@@ -73,7 +65,7 @@ header {
 
 .icons {
     /* border: 1px solid red; */
-    width: 10%;
+    width: 20%;
     display: flex;
     justify-content: space-around;
     padding-right: 20px;
@@ -125,7 +117,7 @@ h1 {
     justify-content: space-between;
     border: 1px solid gray;
     width: 90%;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 #search-icon{
     font-size: 20px;
@@ -167,67 +159,4 @@ p{
 #txt{
     color: white;
     font-size: 17px;
-}
-
-.ls-input-text, input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea {
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-    -moz-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    font-family: Open Sans, Arial, Helvetica, Sans-serif;
-    font-size: 13px;
-    padding: 6px 11px 7px;
-    vertical-align: middle;
-    background-color: var(--light);
-    background-image: none;
-    border: none;
-    border-radius: 20px;
-    line-height: 1.42857;
-}
-
-.ls-cart .ls-cart-header:before {
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -moz-transition: all 0.35s ease;
-    -o-transition: all 0.35s ease;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-    font: 12px "Locastyle";
-    color: black;
-    pointer-events: none;
-    content: "\e60f";
-    position: absolute;
-    right: 20px;
-    top: 39%;
-}
-.ls-cart{
-    width: auto;
-    height: 70px;
-    position: relative; 
-    z-index: 999; 
-}
-.ls-cart-header{
-    height: 60px;
-}
-
-#qtd{
-    font-size: 13px;
-    color: black;
-}
-
-<<<<<<<< HEAD:Mercado Web/web/styles/header.css
-
-.ls-theme-gray .ls-cart-header, html .ls-cart-header {
-
-    background-color: #f8f9fa;
-========
-.cards{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
->>>>>>>> dbe6cd28b41a34279dd0186395eb2071d4f28903:web/index.css
 }
