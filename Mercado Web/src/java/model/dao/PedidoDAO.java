@@ -5,7 +5,7 @@
  */
 package model.dao;
 
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 import conexao.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -47,8 +47,8 @@ public class PedidoDAO {
             stmt = conexao.prepareStatement("INSERT INTO pedido (usuario, endereco_entrega, data_pedido, valor_total) VALUES (?, ?, ?, ?)");
             stmt.setInt(1, p.getUsuario());
             stmt.setInt(2, p.getEndereco_entrega());
-            stmt.setTimestamp(3, p.getData_pedido());
-            stmt.setFloat(4, p.getValor_total());
+            stmt.setDate(3, p.getData_pedido());
+            stmt.setFloat(4, p.getValorTotal());
 
             stmt.executeUpdate();
 
@@ -78,8 +78,8 @@ public class PedidoDAO {
                 p.setIdPedido(rs.getInt("idPedido"));
                 p.setUsuario(rs.getInt("usuario"));
                 p.setEndereco_entrega(rs.getInt("endereco_entrega"));
-                p.setValor_total(rs.getFloat("valor_total"));
-                p.setData_pedido(rs.getTimestamp("data_pedido"));
+                p.setValorTotal(rs.getFloat("valor_total"));
+                p.setData_pedido(rs.getDate("data_pedido"));
                 pedidos.add(p);
             }
             

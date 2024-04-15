@@ -16,6 +16,22 @@
         <servlet-name>Controller</servlet-name>
         <servlet-class>controller.Controller</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProdutoController</servlet-name>
+        <servlet-class>controller.ProdutoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cadastroUsuarioController</servlet-name>
+        <servlet-class>controller.cadastroUsuarioController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller.LoginController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>meusPedidosController</servlet-name>
+        <servlet-class>controller.meusPedidosController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -23,6 +39,22 @@
     <servlet-mapping>
         <servlet-name>Controller</servlet-name>
         <url-pattern>/Controller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProdutoController</servlet-name>
+        <url-pattern>/Produtos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cadastroUsuarioController</servlet-name>
+        <url-pattern>/cadastro-usuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>meusPedidosController</servlet-name>
+        <url-pattern>/meus-pedidos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

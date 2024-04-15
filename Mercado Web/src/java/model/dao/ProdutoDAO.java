@@ -5,8 +5,9 @@
  */
 package model.dao;
 
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 import conexao.Conexao;
+import java.io.FileInputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -188,12 +189,14 @@ public class ProdutoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("INSERT INTO produto (nome, categoria, valor, desconto, valorFinal) VALUES (?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO produto (nome, categoria, valor, desconto, valorFinal, clube, imagem) VALUES (?, ?, ?, ?, ?,?,?)");
             stmt.setString(1, p.getNome());
             stmt.setInt(2, p.getCategoria());
             stmt.setFloat(3, p.getValor());
             stmt.setFloat(4, p.getDesconto());
             stmt.setFloat(5, p.getValorFinal());
+            stmt.setInt(6, p.getClube());
+            stmt.setBlob(6, p.getImagem());
 
             stmt.executeUpdate();
 
@@ -209,13 +212,14 @@ public class ProdutoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("UPDATE produto SET nome = ?, categoria = ?, valor = ?, desconto = ?, valorFinal = ? WHERE idProduto = ?");
+            stmt = conexao.prepareStatement("UPDATE produto SET nome = ?, categoria = ?, valor = ?, desconto = ?, valorFinal = ?, clube = ? WHERE idProduto = ?");
             stmt.setString(1, p.getNome());
             stmt.setInt(2, p.getCategoria());
             stmt.setFloat(3, p.getValor());
             stmt.setFloat(4, p.getDesconto());
             stmt.setFloat(5, p.getValorFinal());
-            stmt.setInt(6, p.getIdProduto());
+            stmt.setInt(6, p.getClube());
+            stmt.setInt(7, p.getIdProduto());
 
             stmt.executeUpdate();
 
@@ -233,12 +237,6 @@ public class ProdutoDAO {
 
             stmt = conexao.prepareStatement("DELETE FROM produto WHERE idProduto = ?");
             stmt.setInt(1, id);
-
-            stmt.executeUpdate();
-
-            stmt = conexao.prepareStatement("DELETE FROM produto_imagem WHERE produto = ?");
-            stmt.setInt(1, id);
-
             stmt.executeUpdate();
 
             stmt.close();

@@ -1,8 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,6 +12,9 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/edge/stylesheets/locastyle.css">
+
 
   <link rel="stylesheet" href="./styles/index.css">
   <link rel="stylesheet" href="./styles/header.css" />
@@ -25,7 +28,7 @@
   <div class="promocao">
     <h3>
       UTILIZE O CUPOM: <b>BEMVINDO10</b> E GANHE 10% NA SUA PRIMEIRA COMPRA
-      <span>(EXCETO PRODUTOS PROMOCIONAIS)</span>r
+      <span>(EXCETO PRODUTOS PROMOCIONAIS)</span>
     </h3>
   </div>
   <header>
@@ -33,6 +36,51 @@
       <h1>FanFut Store</h1>
     </div>
 
+    <div class="carrinho">
+
+      <div class="ls-cart">
+        <input type="checkbox" class="ls-checkbox-cart">
+        <header class="ls-cart-header">
+          <strong id="qtd"><i class="fa-solid fa-cart-shopping"></i></strong>
+        </header>
+        <div class="ls-cart-content">
+          <ul class="ls-no-list-style">
+            <li>
+              <h2 class="ls-title-product">
+                <strong>01</strong> Email Marketing Locaweb
+              </h2>
+              <p> (Identificador) </p>
+              <a href="">Excluir</a>
+            </li>
+            <li>
+              <h2 class="ls-title-product">
+                <strong>02</strong> Monitor LED 27"
+              </h2>
+              <p> (Identificador) </p>
+              <a href="">Excluir</a>
+            </li>
+            <li>
+              <h2 class="ls-title-product">
+                <strong>06</strong> Honda FIT 2010 4p Flex 1.4 16v
+              </h2>
+              <p> (Identificador) </p>
+              <a href="">Excluir</a>
+            </li>
+            <li>
+              <h2 class="ls-title-product">
+                <strong>01</strong> Lorem Ipsum is simply dummy text
+              </h2>
+              <p> (Identificador) </p>
+              <a href="">Excluir</a>
+            </li>
+          </ul>
+          <footer class="ls-cart-footer ls-txt-center">
+            <a href="" class="ls-btn-primary">Finalizar Compra</a>
+          </footer>
+        </div>
+      </div>
+
+    </div>
     <div class="search">
       <form  class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="O que você procura?" aria-label="Search">
@@ -47,14 +95,14 @@
           <i class="fa-solid fa-user"></i>
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="./pages/login.html">Login</a></li>
-          <li><a class="dropdown-item" href="#">Cadastre-se</a></li>
-          <li><a class="dropdown-item" href="#">Meus Pedidos</a></li>
+          <li><a class="dropdown-item" href="./Login">Login</a></li>
+          <li><a class="dropdown-item" href="./cadastro-usuario">Cadastre-se</a></li>
+          <li><a class="dropdown-item" href="./meus-pedidos">Meus Pedidos</a></li>
         </ul>
       </div>
      
 
-      <i class="fa-solid fa-bag-shopping"></i>
+      
     </div>
   </header>
 
@@ -124,38 +172,41 @@
   </div>
 
   <main>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100"
-            src="./assets/Captura de tela 2024-04-08 003833.png"
-            alt="First slide">
+    <div id="container-carrosel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100"
+              src="./assets/Captura de tela 2024-04-08 003833.png"
+              alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100"
+              src="./assets/Captura de tela 2024-04-08 003839.png"
+              alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100"
+              src="./assets/Captura de tela 2024-04-08 003844.png"
+              alt="Third slide">
+          </div>
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-100"
-            src="./assets/Captura de tela 2024-04-08 003839.png"
-            alt="Second slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100"
-            src="./assets/Captura de tela 2024-04-08 003844.png"
-            alt="Third slide">
-        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
+    
     <div class="info">
       <p><i id="wallet" class="fa-solid fa-wallet"></i> <span id="txt">Parcelamos em até 10x</span></p>
     </div>
@@ -203,8 +254,51 @@
           </span>
         </div>
       </div>
+        <div class="card" style="width: 18rem;">
+        <img src="./assets/Captura de tela 2024-04-08 004959.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Camisa Sao Paulo Titular 24/25 - NB Torcedor Mascolina</p>
+          <span class="label-card">
+            R$ 179,90 <s>R$ 399,00</s>
+            <p>em até 12x de 18,23</p>
+          </span>
+        </div>
+      </div>
+        <div class="card" style="width: 18rem;">
+        <img src="./assets/Captura de tela 2024-04-08 004959.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Camisa Sao Paulo Titular 24/25 - NB Torcedor Mascolina</p>
+          <span class="label-card">
+            R$ 179,90 <s>R$ 399,00</s>
+            <p>em até 12x de 18,23</p>
+          </span>
+        </div>
+      </div>
+        <div class="card" style="width: 18rem;">
+        <img src="./assets/Captura de tela 2024-04-08 004959.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Camisa Sao Paulo Titular 24/25 - NB Torcedor Mascolina</p>
+          <span class="label-card">
+            R$ 179,90 <s>R$ 399,00</s>
+            <p>em até 12x de 18,23</p>
+          </span>
+        </div>
+      </div>
+        <div class="card" style="width: 18rem;">
+        <img src="./assets/Captura de tela 2024-04-08 004959.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Camisa Sao Paulo Titular 24/25 - NB Torcedor Mascolina</p>
+          <span class="label-card">
+            R$ 179,90 <s>R$ 399,00</s>
+            <p>em até 12x de 18,23</p>
+          </span>
+        </div>
+      </div>
     </div>
   </section>
+
+  <script src="//assets.locaweb.com.br/locastyle/edge/javascripts/locastyle.js"></script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

@@ -15,15 +15,17 @@ public class Pedido {
     private int idPedido;
     private int usuario;
     private int endereco_entrega;
+    private float valorTotal;
     private Date data_pedido;
 
     public Pedido() {
     }
 
-    public Pedido(int idPedido, int usuario, int endereco_entrega, Date data_pedido) {
+    public Pedido(int idPedido, int usuario, int endereco_entrega, float valorTotal, Date data_pedido) {
         this.idPedido = idPedido;
         this.usuario = usuario;
         this.endereco_entrega = endereco_entrega;
+        this.valorTotal = valorTotal;
         this.data_pedido = data_pedido;
     }
 
@@ -51,6 +53,14 @@ public class Pedido {
         this.endereco_entrega = endereco_entrega;
     }
 
+    public float getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(float valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
     public Date getData_pedido() {
         return data_pedido;
     }
@@ -58,5 +68,7 @@ public class Pedido {
     public void setData_pedido(Date data_pedido) {
         this.data_pedido = data_pedido;
     }
+
+    
     
 }
