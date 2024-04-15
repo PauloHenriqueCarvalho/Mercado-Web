@@ -225,7 +225,7 @@ p{
 .ls-theme-gray .ls-cart-header, html .ls-cart-header {
 
     background-color: #f8f9fa;
-
+}
 .cards{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
